@@ -1,25 +1,26 @@
 # EC-PowerSystems
 EC-PowerSystems Information
 
-## Se ha desarrollado una herramienta para extraer datos de elementos del sistema eléctrico de potencia modelado en PowerFactory.
+Se ha desarrollado una herramienta para extraer datos de elementos del sistema eléctrico de potencia modelado mediante el Lenguaje de Programación DIgSILENT (DPL) en PowerFactory.
 
 # Herramienta de extracción de datos para Sistemas Eléctricos de Potencia - PowerFactory
 
-Este informe detalla el análisis y la extracción de datos realizados a través del programa PowerFactory mediante el Lenguaje de Programación DIgSILENT (DPL). El propósito principal fue obtener información integral sobre el sistema eléctrico, incluyendo datos detallados de barras, líneas, transformadores, generadores y potencia reactiva y activa inyectada. Además, se estableció una conexión con Excel para presentar la información de manera organizada y comprensible.
+El propósito principal fue obtener información integral sobre el sistema eléctrico, incluyendo datos detallados de barras, líneas, transformadores, generadores y potencia reactiva y activa inyectada. Además, se estableció una conexión con Excel para presentar la información de manera organizada y comprensible.
 
-## Configuración del Sistema
+## Inicialización
+Se define los objetos que se desea calcular y se excluyen los elementos inactivos.
+
   **Número de Elementos Activos**
-  - **Barras Activas:** Número de Barras.
-  - **Líneas Activas:** Número de Líneas.
-  - **Transformadores 2 Bobinados Activos:** Número de Transformadores 2 Bobinados.
-  - **Transformadores 3 Bobinados Activos:** Número de Transformadores 3 Bobinados.
-  - **Generadores Activos:** Número de Generadores.
-  - **External Grid Activos:** Número de External Grid
-  - **Generadores Estáticos Activos:** Número de Generadores Estáticos
-  - **Plantas Solares Activas:** Número de Plantas Solares
-  - **Filtros Activos:** Número de Filtros
-  - **SVCs Activos:** Número de SVCs
-
+  - **Barras Activas** 
+  - **Líneas Activas**
+  - **Transformadores 2 Bobinados Activos**
+  - **Transformadores 3 Bobinados Activos**
+  - **Generadores Activos**
+  - **External Grid Activos**
+  - **Generadores Estáticos Activos**
+  - **Plantas Solares Activas**
+  - **Filtros Activos**
+  - **SVCs Activos**
 
 ## Parámetros de Barras (Hoja 1 - BUS)
   Se presenta algunos de los parámetros clave de las barras en el sistema:
@@ -54,3 +55,16 @@ Este informe detalla el análisis y la extracción de datos realizados a través
 
 ## Conclusión
 Este informe proporciona una visión general detallada de la configuración del sistema eléctrico, destacando información crítica de las barras, líneas, transformadores y generadores. La presentación en hojas de cálculo facilita la interpretación de los datos. Este análisis puede ser utilizado como base para futuras optimizaciones y mejoras en el sistema eléctrico, garantizando la estabilidad y eficiencia operativa.
+
+
+
+## Descripción
+
+
+## Funcionalidades
+- Extracción de datos relevantes de modelos de sistemas eléctricos.
+- Interfaz de usuario intuitiva para configurar y ejecutar la extracción.
+- Compatibilidad con PowerFactory.
+
+## Instalación
+

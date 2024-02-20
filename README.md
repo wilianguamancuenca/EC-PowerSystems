@@ -1,13 +1,43 @@
 # EC-PowerSystems
 EC-PowerSystems Information
 
-Se ha desarrollado una herramienta para extraer datos de elementos del sistema eléctrico de potencia modelado mediante el Lenguaje de Programación DIgSILENT (DPL) en PowerFactory.
-
 # Herramienta de extracción de datos para Sistemas Eléctricos de Potencia - PowerFactory
 
-El propósito principal fue obtener información integral sobre el sistema eléctrico, incluyendo datos detallados de barras, líneas, transformadores, generadores y potencia reactiva y activa inyectada. Además, se estableció una conexión con Excel para presentar la información de manera organizada y comprensible.
+Se desarrolló una herramienta para la extracción de datos de elementos del sistema eléctrico de potencia mediante el Lenguaje de Programación DIgSILENT (DPL) en PowerFactory y creacioó de una base de datos en Excel. El propósito principal fue obtener información integral sobre el sistema, incluyendo datos detallados de barras, líneas, transformadores, generadores, potencia reactiva y activa inyectada.
 
-## Inicialización
+Para la inicialización del programa se verificó la comunicación con Excel y se integro a cada *set* unicamente los elementos activos correspondientes. Además, en el *set*  de elementos tipo *.ElmTerm* e consideraron únicamente los objetos *Terminal* para la extracción de datos, excluyendo los objetos *Internal Node* y *Junction Node*.
+
+```c++
+verif = xlStart();
+if (verif) {
+    printf('Error al vincular Excel');
+}
+sBarras = AllRelevant('*.ElmTerm', 0);
+sLineas = AllRelevant('*.ElmLne', 0);
+sTrafo = AllRelevant('*.ElmTr2', 0);
+sTrafo3 = AllRelevant('*.ElmTr3', 0);
+sGen = AllRelevant('*.ElmSym', 0);
+sXGrid = AllRelevant('*.ElmXnet', 0);
+sGenstat = AllRelevant('*.ElmGenstat', 0);
+sPV = AllRelevant('*.ElmPvsys', 0);
+sShunt = AllRelevant('*.ElmShnt', 0);
+sSvc = AllRelevant('*.ElmSvs', 0);
+```
+## Extraccion de datos
+El almacenamiento de datos se divide en cuatro hojas de cálculo distintas. En la primera hoja, se encuentra los parámetros asociados a los elementos terminales previamente filtrados, como voltaje, potencia activa y reactiva, así como el tipo de barra correspondiente.  En consecuencia...
+
+```
+
+```
+La segunda hoja está destinada al cálculo de parámetros, incluyendo susceptancias y potencias de línea, así como características específicas de la configuración de los transformadores. Las hojas 3 y 4 se centran en el almacenamiento de datos relacionados con generadores, compensadores de potencia activa y reactiva y numeración de los terminales de los distintos objetos. 
+
+
+
+### bus
+
+
+
+
 Se define los objetos que se desea calcular y se excluyen los elementos inactivos.
 
   **Número de Elementos Activos**

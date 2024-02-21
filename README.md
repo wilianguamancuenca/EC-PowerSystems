@@ -5,7 +5,7 @@ EC-PowerSystems Information
 
 Se desarrolló una herramienta para la extracción de datos de elementos del sistema eléctrico de potencia mediante el Lenguaje de Programación DIgSILENT (DPL) en PowerFactory y creacioó de una base de datos en Excel. El propósito principal fue obtener información integral sobre el sistema, incluyendo datos detallados de barras, líneas, transformadores, generadores, potencia reactiva y activa inyectada.
 
-Para la inicialización del programa se verificó la comunicación con Excel y se integro a cada *set* unicamente los elementos activos correspondientes. Además, en el *set*  de elementos tipo *.ElmTerm* e consideraron únicamente los objetos *Terminal* para la extracción de datos, excluyendo los objetos *Internal Node* y *Junction Node*.
+Para la inicialización del programa se verificó la comunicación con Excel y se integro a cada *set* unicamente los elementos activos correspondientes. Además, en el *set*  de elementos *.ElmTerm* se consideraron únicamente los objetos de *iUsage* tipo *Terminal* para la extracción de datos, excluyendo los objetos *Internal Node* y *Junction Node*.
 
 ```c++
 verif = xlStart();
@@ -24,10 +24,14 @@ sShunt = AllRelevant('*.ElmShnt', 0);
 sSvc = AllRelevant('*.ElmSvs', 0);
 ```
 ## Extraccion de datos
-El almacenamiento de datos se divide en cuatro hojas de cálculo distintas. En la primera hoja, se encuentra los parámetros asociados a los elementos terminales previamente filtrados, como voltaje, potencia activa y reactiva, así como el tipo de barra correspondiente.  En consecuencia...
+El almacenamiento de datos se divide en cuatro hojas de cálculo distintas. En la primera hoja, se encuentra los parámetros asociados a los elementos terminales previamente filtrados, como voltaje, potencia activa y reactiva, así como el tipo de barra correspondiente. Un valor de *1 a n* es asignado a cada barra del sistema, en consecuencia, elementos como lineas o transformadores llevarán nomenclatura referente a las barras entre las que encuentren, es decir *i<sub>n</sub> - j<sub>n</sub>*.
 
-```
+```c++
+while(oBarras){
+  terminal=oBarras:iUsage;
+  if(terminal=0){
 
+  }
 ```
 La segunda hoja está destinada al cálculo de parámetros, incluyendo susceptancias y potencias de línea, así como características específicas de la configuración de los transformadores. Las hojas 3 y 4 se centran en el almacenamiento de datos relacionados con generadores, compensadores de potencia activa y reactiva y numeración de los terminales de los distintos objetos. 
 

@@ -9,6 +9,12 @@ EC-PowerSystems Information
 
 Comenzamos descargando el archivo .dz, que contiene el script y el archivo de Excel habilitado para macros. Para importar el archivo .dz a PowerFactory, abrimos el Data Manager y hacemos clic derecho en la carpeta donde deseamos almacenar el script, luego importamos nuestro archivo.
 
+
+
+https://github.com/wilianguamancuenca/EC-PowerSystems/assets/158780955/a191aafa-8890-431a-8896-39e8b0ebdb26
+
+
+
 Si deseamos importar el archivo dentro de un proyecto, es importante asegurarse de que el proyecto esté desactivado. Además, se recomienda ubicar el archivo en la carpeta "Scripts" que se encuentra en la Libreria del proyecto.
 
 ## Funcionamiento del programa

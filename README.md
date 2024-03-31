@@ -21,6 +21,8 @@ Si deseamos importar el archivo dentro de un proyecto, es importante asegurarse 
 
 Para que el programa funcione correctamente, es necesario tener la ruta del archivo Excel previamente descargado. Localizamos el script en el Data Manager, hacemos clic derecho y seleccionamos "Editar". Dentro de la pestaña "Basic Options", encontramos un parámetro de entrada de tipo String denominado "Path". En el valor de este parámetro, ingresamos la ruta de acceso del archivo Excel. Es importante que la ruta de acceso no se encuentre entre comillas "".
 
+https://github.com/wilianguamancuenca/EC-PowerSystems/assets/158780955/f3a35493-cb38-446e-b1b6-76629988dd66
+
 Finalmente, guardamos los cambios y ejecutamos el programa. El archivo de Excel descargado se abrirá, y comenzará a grabar los datos. Si el archivo de Excel ya ha sido utilizado previamente y contiene datos adicionales o más hojas, es posible que durante la ejecución del programa, Excel pregunte si se desean borrar para continuar con el uso del programa.
 
 ## Interpretación de resultados

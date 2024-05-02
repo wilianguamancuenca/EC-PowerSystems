@@ -5,6 +5,12 @@ EC-PowerSystems Information
 
 # Herramienta de extracción de datos para Sistemas Eléctricos de Potencia - PowerFactory
 
+La extracción de los datos requeridos para el sistema se llevó a cabo mediante el Lenguaje de Programación DIgSILENT (DPL), estructurado en tres procesos de programación que generan una base de datos organizada, como se muestra en el diagrama de flujo de la Figura X. En el primer proceso, se realizó la inicialización de las variables y se verificó la comunicación entre PowerFactory y Excel, seguido de un flujo de carga para el caso de estudio específico, donde se filtraron los elementos activos, considerando únicamente los objetos Terminal para la extracción de datos, mientras se excluían los objetos Internal Node y Junction Node.
+
+[Diagrama de flujo_DPL.pdf](https://github.com/wilianguamancuenca/EC-PowerSystems/files/15183000/Diagrama.de.flujo_DPL.pdf)
+
+Por otro lado, el segundo proceso se encarga del almacenamiento de datos en cuatro hojas de cálculo distintas. En la primera hoja, se recopilan todos los elementos terminales activos previamente filtrados, acompañados de parámetros como voltaje, potencia activa y reactiva, junto con el tipo de barra correspondiente. La segunda hoja se destina al cálculo de parámetros adicionales, incluyendo susceptancias y potencias de línea, así como características específicas de la configuración de los transformadores. En tanto, las hojas 3 y 4 se centran en el almacenamiento de datos relacionados con generadores, compensadores de potencia activa y reactiva, y la numeración de los terminales de los distintos objetos. Todos los datos extraídos previamente se organizan en base a la hoja 1, asignándoles una numeración específica a cada barra. Como parte de este proceso final, los terminales i y j, así como los datos correspondientes a generadores y compensadores de potencia, son reubicados y ordenados en las hojas 1 y 2 según lo dictamine su numeración respectiva, además de identificar campos vacíos y asignarles el valor de 0, concluyendo con la generación de la base de datos final en un archivo .xls.
+
 ## Inicialización
 
 Comenzamos descargando el archivo .dz, que contiene el script y el archivo de Excel habilitado para macros. Para importar el archivo .dz a PowerFactory, abrimos el Data Manager y hacemos clic derecho en la carpeta donde deseamos almacenar el script, luego importamos nuestro archivo.
